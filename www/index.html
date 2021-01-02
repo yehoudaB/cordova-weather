@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/theme.css">
+        <title>Hello World</title>
+        <script type="text/javascript" src="cordova.js" defer></script>
+        <script type="text/javascript" src="components/Default/index.js" defer></script>
+        <script type="text/javascript" src="components/WeatherApp/index.js" defer></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <weather-app data-key="f65c858f055528d53a370d5955b58ded">
+
+            <statment>
+                <day>Lundi</day>
+                <icon>NIY</icon>
+                <ville>Paris</ville>
+                <pressure>1080</pressure>
+                <temp>-3</temp>
+                <humidity>80</humidity>
+                <feels_like>-6</feels_like>
+                <temp_min>-2</temp_min>
+                <temp_max>4</temp_max>
+            </statment>
+
+            
+
+        </weather-app>
+
+        <div class="container">
+            
+            <div class="form-group col-md-6 offset-md-3 col-sm-12 mt-3 text-center">
+                <label for="">Rechercher une ville</label>
+                <input type="text"
+                class="form-control " name="cityToSearch" id="cityToSearch"  aria-describedby="helpId" placeholder="Ex: Paris">
+                <button class="btn btn-success mt-3" id="button" type="button">rechercher</button>
+            </div>
+
+            <div class="alert alert-danger" role="alert" style="visibility: hidden;">
+                Veuillez rentrer une ville correcte !
+              </div>
+        
+            <div class="border border rounded p-4 mt-5 mainDay ">
+                <div class="">
+                    <h2><span id="city">-</span> </h2>
+                    <h4 class="pt-3 pb-3"> <span id="day"></span> <span id="hour"></span> </h4>
+                </div>
+
+                <div class="text-center">
+                    <img class="pb-5" src="" alt="" id="icon">
+                
+                    <span class="mainTemp" id="temp"></span>
+                    <span class="h-100">°C</span>
+                </div>
+                <div>
+                    <p class="mb-0"><label for="">Description</label> : <span id="skyDescription"></span></p>
+                    <p class="mb-0" ><label for="">Pression atmosphérique</label> : <span id="pressure"></span> </p>
+                    <p class="mb-0"><label for="">Humidité</label> : <span id="humidity"></span> </p>
+                    <p class="mb-0"><label for="">ressenti</label> : <span id="feels_like"></span>°C </p>
+                    <p class="mb-0"><label for="">Minimale</label> : <span id="temp_min">-2</span> </p>
+                    <p ><label for="">Maximale</label>: <span id="temp_max"></span> </p>
+                </div>
+                               
+            </div>
+
+
+           
+
+      
+
+            <div id="accordion">
+                <!-- days-->
+                <div class="border rounded mt-3 otherDay" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="d-flex justify-content-between">
+                        <div   class="d-inline-block align-self-center  ml-3 "  id="cardDay">  
+                        </div>
+                        <div class="d-inline-block pb-n5 mb-n5 mr-3">
+                            <img class="pb-5" src="http://openweathermap.org/img/wn/01d@2x.png " alt="" id="cardIcon">
+                        
+                            <span class="temp" id="cardTemp">5</span>
+                            <span class="h-100">°C</span>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="mb-0"><label for="">Description</label> : <span id="skyDescription"></span></p>
+                            <p class="mb-0" ><label for="">Pression atmosphérique</label> : <span id="pressure"></span> </p>
+                            <p class="mb-0"><label for="">Humidité</label> : <span id="humidity"></span> </p>
+                            <p class="mb-0"><label for="">ressenti</label> : <span id="feels_like"></span>°C </p>
+                            <p class="mb-0"><label for="">Minimale</label> : <span id="temp_min">-2</span> </p>
+                            <p ><label for="">Maximale</label>: <span id="temp_max"></span> </p>
+                        </div>
+                      </div>
+                    
+                </div>
+                
+                <!-- days-->
+                <div class="border rounded mt-3 otherDay" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                   <div class="d-flex justify-content-between">
+                        <div   class="d-inline-block align-self-center  ml-3 "  id="cardDay">  
+                        </div>
+                        <div class="d-inline-block pb-n5 mb-n5 mr-3">
+                            <img class="pb-5" src="http://openweathermap.org/img/wn/01d@2x.png " alt="" id="cardIcon">
+                        
+                            <span class="temp" id="cardTemp">5</span>
+                            <span class="h-100">°C</span>
+                        </div>
+                   </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="mb-0"><label for="">Description</label> : <span id="skyDescription"></span></p>
+                            <p class="mb-0" ><label for="">Pression atmosphérique</label> : <span id="pressure"></span> </p>
+                            <p class="mb-0"><label for="">Humidité</label> : <span id="humidity"></span> </p>
+                            <p class="mb-0"><label for="">ressenti</label> : <span id="feels_like"></span>°C </p>
+                            <p class="mb-0"><label for="">Minimale</label> : <span id="temp_min">-2</span> </p>
+                            <p ><label for="">Maximale</label>: <span id="temp_max"></span> </p>
+                        </div>
+                      </div>
+                    
+                </div>
+          
+
+                <!-- days-->
+                <div class="border rounded mt-3  otherDay" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <div class="d-flex justify-content-between">
+                        <div   class="d-inline-block align-self-center  ml-3 "  id="cardDay">  
+                        </div>
+                        <div class="d-inline-block pb-n5 mb-n5 mr-3">
+                            <img class="pb-5" src="http://openweathermap.org/img/wn/01d@2x.png " alt="" id="cardIcon">
+                        
+                            <span class="temp" id="cardTemp">5</span>
+                            <span class="h-100">°C</span>
+                        </div>
+                    </div>    
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="mb-0"><label for="">Description</label> : <span id="skyDescription"></span></p>
+                            <p class="mb-0" ><label for="">Pression atmosphérique</label> : <span id="pressure"></span> </p>
+                            <p class="mb-0"><label for="">Humidité</label> : <span id="humidity"></span> </p>
+                            <p class="mb-0"><label for="">ressenti</label> : <span id="feels_like"></span>°C </p>
+                            <p class="mb-0"><label for="">Minimale</label> : <span id="temp_min">-2</span> </p>
+                            <p ><label for="">Maximale</label>: <span id="temp_max"></span> </p>
+                        </div>
+                      </div>
+                    
+                </div>
+
+                <!-- days-->
+                <div class="border rounded mt-3  otherDay" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <div class="d-flex justify-content-between">
+                        <div   class="d-inline-block align-self-center  ml-3 "  id="cardDay">  
+                        </div>
+                        <div class="d-inline-block pb-n5 mb-n5 mr-3">
+                            <img class="pb-5" src="http://openweathermap.org/img/wn/01d@2x.png " alt="" id="cardIcon">
+                        
+                            <span class="temp" id="cardTemp">5</span>
+                            <span class="h-100">°C</span>
+                        </div>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="mb-0"><label for="">Description</label> : <span id="skyDescription"></span></p>
+                            <p class="mb-0" ><label for="">Pression atmosphérique</label> : <span id="pressure"></span> </p>
+                            <p class="mb-0"><label for="">Humidité</label> : <span id="humidity"></span> </p>
+                            <p class="mb-0"><label for="">ressenti</label> : <span id="feels_like"></span>°C </p>
+                            <p class="mb-0"><label for="">Minimale</label> : <span id="temp_min">-2</span> </p>
+                            <p ><label for="">Maximale</label>: <span id="temp_max"></span> </p>
+                        </div>
+                    </div>
+                
+                </div>
+
+
+            </div>  
+        </div>
+       
+        
+        <!-- <div>
+            <p><label for=""></label><span id="day"></span> </p>
+            <p><label for=""></label><span id="icon">NIY</span> </p>
+            <p><label for=""></label><span id="city">Paris</span> </p>
+            <p><label for=""></label><span id="pressure"></span> </p>
+            <p><label for=""></label><span id="temp" ></span> </p>
+            <p><label for=""></label><span id="humidity"></span> </p>
+            <p><label for=""></label><span id="feels_like"></span> </p>
+            <p><label for=""></label><span id="temp_min">-2</span> </p>
+            <p><label for=""></label><span id="temp_max">4</span> </p>
+        </div> -->
+    </body>
+</html>

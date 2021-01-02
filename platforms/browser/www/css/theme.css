@@ -1,0 +1,14 @@
+.otherDay:hover{
+    background-color: rgb(126, 212, 247);
+    cursor: pointer;
+}
+.temp{ 
+    font-size: 2em;
+}
+.mainTemp{
+    font-size: 3em;
+}
+.mainDay:hover{
+    cursor: pointer;
+}
+
